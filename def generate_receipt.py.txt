@@ -1,0 +1,27 @@
+def generate_receipt():
+    print("=== SIMPLE RECEIPT GENERATOR ===\n")
+
+    items = []
+    total = 0
+
+    num_items = int(input("How many items are you buying? "))
+
+    for i in range(num_items):
+        print(f"\nItem {i+1}")
+        name = input("Enter item name: ")
+        price = float(input("Enter item price: "))
+        quantity = int(input("Enter item quantity: "))
+
+        cost = price * quantity
+        items.append((name, price, quantity, cost))
+        total += cost
+
+    print("\n============= RECEIPT =============")
+    for item in items:
+        print(f"{item[0]}  x{item[2]}  @ {item[1]} each  = {item[3]:.2f}")
+    print("-----------------------------------")
+    print(f"TOTAL: {total:.2f}")
+    print("===================================")
+    print("Thank you for shopping with us!")
+
+generate_receipt()
